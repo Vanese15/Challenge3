@@ -11,13 +11,22 @@ function writePassword() {
 function generatePassword() { 
 
 // password criteria
-// password length prompt
-var passwordLength = prompt ("Please enter length of password.  Length must be between 8 and 128 characters");
-var lowerCase = confirm ("Add lower case character to password?");
-var upperCase = confirm ("Add upper case character to password?");
-var specialChar = confirm ("Add special character to password?");
+// password length prompt, upper/lowercase, number & special character
+    var passwordLength = prompt ("Please enter length of password.  Length must be between 8 and 128 characters");
+    var upperCase = confirm ("Add upper case character to password?");
+    var lowerCase = confirm ("Add lower case character to password?");
+    var numberChar = confirm ("Add number character to password?");
+    var specialChar = confirm ("Add special character to password?");
 
-} 
+// set value for each type of character
+
+    var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    var numberChar = "0123456789";
+    var specialChar = "!@#$%^&*()";
+    var allChar = upperCase + lowerCase + numberChar + specialChar
+}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
