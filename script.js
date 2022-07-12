@@ -17,6 +17,13 @@ function generatePassword() {
     var lowerCase = confirm ("Add lower case character to password?");
     var numberChar = confirm ("Add number character to password?");
     var specialChar = confirm ("Add special character to password?");
+    var password = "";
+    var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
+
+for (var i = 0; i <= passwordLength; i++) {
+  var randomNumber = Math.floor(Math.random() * passwordLength);
+  password += chars.substring(randomNumber, randomNumber +1);
+}
 
 // set value for each type of character
 
@@ -24,9 +31,8 @@ function generatePassword() {
     var lowerCase = "abcdefghijklmnopqrstuvwxyz";
     var numberChar = "0123456789";
     var specialChar = "!@#$%^&*()";
-    var allChar = upperCase + lowerCase + numberChar + specialChar
+    var allChar = upperCase + lowerCase + numberChar + specialChar;
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
